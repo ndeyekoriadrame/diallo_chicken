@@ -331,10 +331,10 @@ export default function Home() {
             Poulets de chair & œufs frais directement de la ferme à votre table.
           </p>
           <a
-            href="/products"
+            href="/contact"
             className="mt-8 bg-yellow-600 text-white px-6 py-3 rounded-lg text-lg"
           >
-            Commander maintenant
+            Contactez-nous
           </a>
         </div>
       </section>
@@ -351,10 +351,7 @@ export default function Home() {
             {/* Titre à gauche */}
             <div className="lg:w-1/3">
               <h2 className="text-2xl md:text-5xl font-bold text-gray-900 leading-tight">
-                L’engagement vers la{' '}
-                <span className="text-primary-200" style={{ fontFamily: "Dancing Script, cursive" }}>
-                  qualité
-                </span>
+                L’engagement vers la qualité
               </h2>
             </div>
 

@@ -25,10 +25,10 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left lg:pl-32">
           <h3 className="text-xl font-semibold mb-4">Explorer</h3>
           <ul className="text-gray-300 space-y-3">
-            <li><a href="/" className="hover:text-yellow-500 transition">Nos services</a></li>
-            <li><a href="/about" className="hover:text-yellow-500 transition">Nos produits</a></li>
-            <li><a href="/products" className="hover:text-yellow-500 transition">Livraison</a></li>
-            <li><a href="/blogs" className="hover:text-yellow-500 transition">Blogs</a></li>
+            <li><a href="/services" className="hover:text-yellow-500 transition">Nos services</a></li>
+            <li><a href="/products" className="hover:text-yellow-500 transition">Nos produits</a></li>
+            <li><a href="/delivery" className="hover:text-yellow-500 transition">Livraison</a></li>
+            <li><a href="/blocks" className="hover:text-yellow-500 transition">Blogs</a></li>
           </ul>
         </div>
 
