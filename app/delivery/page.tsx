@@ -61,7 +61,7 @@ export default function DeliveryPage() {
       <img
         src="/delivery.jpg"
         alt="Delivery"
-        className="w-full h-110 md:h-134 rounded-3xl shadow-xl object-cover"
+        className="w-full h-110 md:h-134 lg:h-110 rounded-3xl shadow-xl object-cover"
       />
 
       {/* Cercles décoratifs */}
