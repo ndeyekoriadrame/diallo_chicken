@@ -479,7 +479,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             
             {/* Image à gauche */}
-            <div className="relative">
+            <div className="relative hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="/contact.png"

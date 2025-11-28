@@ -182,7 +182,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-<section className="py-20 px-6 mb-14 bg-gradient-to-r from-yellow-50 to-yellow-100">
+<section className="py-20 px-6 mb-14 bg-gradient-to-r from-yellow-50 to-yellow-100 hidden md:block">
   <div className="max-w-7xl mx-auto">
     
     <div className="text-center mb-16">
@@ -416,7 +416,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-yellow-50 to-yellow-100">
+      <section className="py-20 px-6 bg-gradient-to-r mt-12 from-yellow-50 to-yellow-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-black mb-6" style={{ fontFamily: "Dancing Script, cursive" }}>
             Rejoignez l'Aventure Diallo Chicken

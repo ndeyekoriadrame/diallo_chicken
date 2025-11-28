@@ -467,7 +467,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Appeler</div>
-                      <div className="text-sm text-gray-600">+221 33 712 34 56</div>
+                      <div className="text-sm text-gray-600">+221 77 780 13 19</div>
                     </div>
                   </a>
 
@@ -480,7 +480,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">WhatsApp</div>
-                      <div className="text-sm text-gray-600">+221 77 123 45 67</div>
+                      <div className="text-sm text-gray-600">+221 77 977 32 17</div>
                     </div>
                   </a>
                 </div>
