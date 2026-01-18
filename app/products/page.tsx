@@ -36,7 +36,7 @@ const products: Product[] = [
     category: "oeuf",
     price: 100,
     weight: "50g/pièce",
-    image: "/oeuf.jpg",
+    image: "/oeuf2.jpg",
     description: "Œufs de qualité, bien conservés et adaptés à tous vos besoins culinaires.",
     inStock: true,
     tags: ["frais", "protéines"]
@@ -69,7 +69,7 @@ const products: Product[] = [
     category: "poulet",
     price: 4500,
     weight: "600-700g",
-    image: "/poulet.jpg",
+    image: "/demipoulet.jpg",
     description: "Demi-poulet découpé, prêt pour la cuisson. Idéal pour 2-3 personnes.",
     inStock: true,
     tags: ["portion", "coupé", "pratique"]
@@ -80,7 +80,7 @@ const products: Product[] = [
     category: "oeuf",
     price: 150,
     weight: "55g/pièce",
-    image: "/oeuf.jpg",
+    image: "/oeuf1.jpg",
     description: "Œufs extra-frais pondus dans les 24h, qualité exceptionnelle.",
     inStock: true,
     tags: ["extra-frais", "qualité"]
@@ -91,7 +91,7 @@ const products: Product[] = [
     category: "poulet",
     price: 4000,
     weight: "2.0 kg",
-    image: "/poulet.jpg",
+    image: "/poulet4.jpg",
     description: "Poulets de chair de bonne qualité, élevés dans des conditions maîtrisées et disponibles en permanence.",
     inStock: true,
     tags: ["royal", "race-sélectionnée", "rare"]
@@ -102,7 +102,7 @@ const products: Product[] = [
     category: "oeuf",
     price: 180,
     weight: "52g/pièce",
-    image: "/oeuf.jpg",
+    image: "/coeuf.jpg",
     description: "Œufs frais de consommation, goût unique et texture exceptionnelle.",
     inStock: true,
     tags: ["gout-unique", "spécial"]
