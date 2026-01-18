@@ -35,11 +35,11 @@ export default function ServicesPage() {
       icon: Package,
       color: "from-yellow-400 to-yellow-500",
       features: [
-        "Poulets élevés en plein air",
+        "Poulets de chair soigneusement sélectionnés",
         "Œufs frais pondus dans les 24h",
-        "Produits 100% naturels",
+        "Œufs frais de consommation, disponibles quotidiennement.",
       ],
-      pricing: "À partir de 150 FCFA",
+      pricing: "À partir de 100 FCFA",
       delivery: "Livraison en 2h"
     },
     {

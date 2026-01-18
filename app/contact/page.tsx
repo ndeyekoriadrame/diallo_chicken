@@ -46,15 +46,15 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Téléphone",
-      content: "+221 33 712 34 56",
-      subContent: "+221 77 123 45 67",
-      action: "tel:+221337123456",
+      content: "+221 77 780 13 19",
+      subContent: "+221 77 977 32 17",
+      action: "tel:+221777801319",
       color: "bg-yellow-100 text-yellow-600"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "contact@diallochicken.com",
+      content: "diallochicken@gmail.com",
       subContent: "ventes@diallochicken.com",
       action: "mailto:contact@diallochicken.com",
       color: "bg-green-100 text-green-600"
@@ -62,7 +62,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Adresse",
-      content: "Km 12, Route de Rufisque",
+      content: "Yeumbeul, Region de Dakar",
       subContent: "Dakar, Sénégal",
       action: "#",
       color: "bg-red-100 text-red-600"

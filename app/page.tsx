@@ -143,8 +143,7 @@ export default function Home() {
                   <div className="text-2xl mt-1">🌱</div>
                   <p>
                     Notre philosophie repose sur le respect de l'animal et l'excellence
-                    culinaire. Nos poulets sont élevés en plein air, nourris aux grains
-                    naturels, sans antibiotiques ni hormones.
+                    culinaire. Nous sélectionnons nos poulets avec soin afin de garantir des plats savoureux et accessibles.
                   </p>
                 </div>
 

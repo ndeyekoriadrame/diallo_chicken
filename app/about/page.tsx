@@ -73,7 +73,7 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "10+", label: "Années d'expérience", icon: Calendar },
+    { number: "15+", label: "Années d'expérience", icon: Calendar },
     { number: "10,000+", label: "Clients satisfaits", icon: Users },
     { number: "20+", label: "Employés dévoués", icon: Users },
     { number: "98%", label: "Taux de satisfaction", icon: Award }
