@@ -1,15 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { cart } = useCart();
 
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  // Ne pas calculer totalItems pendant le rendu côté serveur
+  const totalItems = isMounted ? cart.reduce((sum, item) => sum + item.quantity, 0) : 0;
+
+  // S'assurer que le composant est monté côté client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <header className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
