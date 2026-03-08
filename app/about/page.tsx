@@ -17,36 +17,36 @@ import {
 
 export default function About() {
   const timelineEvents = [
-    {
-      year: "Juin 2012",
-      title: "Les débuts",
-      description: "Fondation de Diallo Chicken par M. Thierno Diallo avec quelques dizaines de poulets dans leur ferme familiale à Yeumbeul."
-    },
-    {
-      year: "Decembre 2014", 
-      title: "Premier expansion",
-      description: "Extension de la ferme et introduction du système d'élevage en plein air pour garantir le bien-être animal."
-    },
-    {
-      year: "Mai 2020",
-      title: "Certification bio",
-      description: "Obtention de la certification agriculture biologique et création du premier point de vente direct."
-    },
-    {
-      year: "Avril 2025",
-      title: "Transformation digitale",
-      description: "Lancement de la plateforme en ligne pour permettre aux clients de commander facilement depuis chez eux."
-    },
-    {
-      year: "Juillet 2025",
-      title: "Partenariats stratégiques",
-      description: "Développement de partenariats avec les restaurants locaux et les grandes surfaces pour élargir notre distribution."
-    },
-    {
-      year: "Octobre 2025",
-      title: "Leader du marché",
-      description: "Aujourd'hui, nous sommes reconnus comme l'un des principaux producteurs de volaille de qualité au Sénégal."
-    }
+   {
+  year: "Juin 2012",
+  title: "Les débuts",
+  description: "Création de Diallo Chicken par M. Thierno Diallo avec un petit élevage de poulets de chair dans la ferme familiale à Yeumbeul, avec l’objectif de fournir de la volaille fraîche et locale."
+},
+{
+  year: "Décembre 2014",
+  title: "Première expansion",
+  description: "Agrandissement de la ferme et augmentation de la capacité d’élevage pour répondre à la demande croissante en poulets de chair dans la région de Dakar."
+},
+{
+  year: "Mai 2020",
+  title: "Amélioration de la production",
+  description: "Modernisation des installations et mise en place de meilleures pratiques d’élevage pour garantir des poulets de chair sains, bien nourris et de qualité."
+},
+{
+  year: "Avril 2025",
+  title: "Transformation digitale",
+  description: "Lancement de notre plateforme en ligne permettant aux clients de commander facilement des poulets de chair et de se faire livrer à domicile."
+},
+{
+  year: "Juillet 2025",
+  title: "Partenariats stratégiques",
+  description: "Développement de partenariats avec des restaurants, des commerces et des revendeurs pour distribuer nos poulets de chair à plus grande échelle."
+},
+{
+  year: "Octobre 2025",
+  title: "Une référence locale",
+  description: "Diallo Chicken est aujourd’hui reconnu comme un fournisseur fiable de poulets de chair frais et de qualité pour les familles et les professionnels."
+}
   ];
 
   const values = [
@@ -265,79 +265,78 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: "Dancing Script, cursive" }}>
-              Notre Équipe Dirigeante
-            </h2>
-            <p className="text-xl text-gray-600">Les visages qui portent notre vision</p>
-          </div>
+<section className="py-20 px-6 bg-white">
+  <div className="max-w-7xl mx-auto">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            
-            {/* Founder 1 */}
-            <div className="text-center">
-              <div className="relative w-52 h-52 mx-auto mb-6">
-                <Image
-                  src="/equipe1.png"
-                  alt="M. Ousmane Diallo"
-                  fill
-                  className="rounded-full object-cover shadow-xl"
-                />
-                <div className="absolute inset-0 rounded-full border-2 border-yellow-200"></div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">M. Thierno Diallo</h3>
-              <p className="text-yellow-600 font-semibold mb-4">Fondateur & Directeur Général</p>
-              <p className="text-gray-600 leading-relaxed">
-                Avec plus de 10 ans d'expérience dans l'élevage, M. Diallo a su créer une entreprise 
-                respectueuse de l'environnement tout en maintenant l'excellence de ses produits.
-              </p>
-            </div>
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: "Dancing Script, cursive" }}>
+        Notre Équipe Dirigeante
+      </h2>
+      <p className="text-xl text-gray-600">Les visages qui portent notre vision</p>
+    </div>
 
-            {/* Founder 2 */}
-            <div className="text-center">
-              <div className="relative w-52 h-52 mx-auto mb-6">
-                <Image
-                  src="/equipe2.png"
-                  alt="Mme Aminata Diallo"
-                  fill
-                  className="rounded-full object-cover shadow-xl"
-                />
-                <div className="absolute inset-0 rounded-full border-2 border-yellow-200"></div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mme Aminata Diallo</h3>
-              <p className="text-yellow-600 font-semibold mb-4">Co-fondatrice & Directrice Qualité</p>
-              <p className="text-gray-600 leading-relaxed">
-                Passionnée par la qualité et la sécurité alimentaire, Mme Diallo supervise 
-                tous les processus de production pour garantir l'excellence de nos produits.
-              </p>
-            </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-            {/* Manager */}
-            <div className="text-center">
-              <div className="relative w-52 h-52 mx-auto mb-6">
-                <Image
-                  src="/equipe3.png"
-                  alt="M. Mamadou Sow"
-                  fill
-                  className="rounded-full object-cover shadow-xl"
-                />
-                <div className="absolute inset-0 rounded-full border-2 border-yellow-200"></div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">M. Mamadou Sow</h3>
-              <p className="text-yellow-600 font-semibold mb-4">Directeur des Opérations</p>
-              <p className="text-gray-600 leading-relaxed">
-                Expert en logistique et distribution, M. Sow assure l'efficacité de notre 
-                chaîne d'approvisionnement pour livrer des produits toujours frais.
-              </p>
-            </div>
-
-          </div>
+      {/* Founder 1 */}
+      <div className="text-center p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <div className="relative w-52 h-52 mx-auto mb-6 overflow-hidden rounded-full">
+          <Image
+            src="/equipe1.png"
+            alt="M. Ousmane Diallo"
+            fill
+            className="object-cover shadow-xl transition-transform duration-300 hover:scale-110"
+          />
+          <div className="absolute inset-0 rounded-full border-2 border-yellow-200"></div>
         </div>
-      </section>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">M. Thierno Diallo</h3>
+        <p className="text-yellow-600 font-semibold mb-4">Fondateur & Directeur Général</p>
+        <p className="text-gray-600 leading-relaxed">
+          Avec plus de 15 ans d'expérience dans l'élevage, M. Diallo a su créer une entreprise 
+          respectueuse de l'environnement tout en maintenant l'excellence de ses produits.
+        </p>
+      </div>
 
+      {/* Founder 2 */}
+      <div className="text-center p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <div className="relative w-52 h-52 mx-auto mb-6 overflow-hidden rounded-full">
+          <Image
+            src="/equipe2.png"
+            alt="Mme Aminata Diallo"
+            fill
+            className="object-cover shadow-xl transition-transform duration-300 hover:scale-110"
+          />
+          <div className="absolute inset-0 rounded-full border-2 border-yellow-200"></div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">Mme Aminata Diallo</h3>
+        <p className="text-yellow-600 font-semibold mb-4">Co-fondatrice & Directrice Qualité</p>
+        <p className="text-gray-600 leading-relaxed">
+          Passionnée par la qualité et la sécurité alimentaire, Mme Diallo supervise 
+          tous les processus de production pour garantir l'excellence de nos produits.
+        </p>
+      </div>
+
+      {/* Manager */}
+      <div className="text-center p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <div className="relative w-52 h-52 mx-auto mb-6 overflow-hidden rounded-full">
+          <Image
+            src="/equipe3.png"
+            alt="M. Mamadou Sow"
+            fill
+            className="object-cover shadow-xl transition-transform duration-300 hover:scale-110"
+          />
+          <div className="absolute inset-0 rounded-full border-2 border-yellow-200"></div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">M. Mamadou Sow</h3>
+        <p className="text-yellow-600 font-semibold mb-4">Directeur des Opérations</p>
+        <p className="text-gray-600 leading-relaxed">
+          Expert en logistique et distribution, M. Sow assure l'efficacité de notre 
+          chaîne d'approvisionnement pour livrer des produits toujours frais.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Location & Contact */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -353,18 +352,26 @@ export default function About() {
             
         {/* Image de la ferme */}
         <div className="relative h-120 rounded-xl overflow-hidden shadow-xl">
-          <img 
-          src="/proposcontact.png" 
-          alt="Notre Ferme"
-          className="w-full h-full object-cover"
-        />
+          <a 
+            href="https://maps.app.goo.gl/Sty9pwxp7B5Khnx89?g_st=aw" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block w-full h-full cursor-pointer"
+          >
+            <img 
+              src="/proposcontact.png" 
+              alt="Notre Ferme"
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </a>
 
           {/* Overlay léger pour effet pro */}
-          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/30 flex items-center justify-center pointer-events-none">
             <div className="text-center text-white">
               <MapPin className="w-12 h-12 mx-auto mb-4" />
               <p className="text-xl font-bold">Notre Ferme</p>
               <p className="text-lg">yeumbeul, Sénégal</p>
+              <p className="text-sm mt-2 opacity-75">Cliquez pour voir sur la carte</p>
             </div>
           </div>
         </div>

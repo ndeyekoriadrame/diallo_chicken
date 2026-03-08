@@ -12,13 +12,13 @@ import {
   MessageCircle,
   Facebook,
   Instagram,
-  Twitter,
   Youtube,
   Navigation,
   User,
   Building,
   Package
 } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -82,29 +82,25 @@ export default function ContactPage() {
       icon: Facebook,
       name: "Facebook",
       url: "#",
-      color: "hover:bg-blue-600",
-      followers: "12.5K"
+      color: "hover:bg-blue-600"
     },
     {
       icon: Instagram,
       name: "Instagram", 
       url: "#",
-      color: "hover:bg-pink-600",
-      followers: "8.2K"
+      color: "hover:bg-pink-600"
     },
     {
-      icon: Twitter,
-      name: "Twitter",
+      icon: FaTiktok ,
+      name: "TikTok",
       url: "#", 
-      color: "hover:bg-blue-400",
-      followers: "5.1K"
+      color: "hover:bg-gray-800"
     },
     {
       icon: Youtube,
       name: "YouTube",
       url: "#",
-      color: "hover:bg-red-600", 
-      followers: "2.8K"
+      color: "hover:bg-red-600"
     }
   ];
 
@@ -180,10 +176,25 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
 
-    // Simulation d'envoi
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Récupérer le libellé du type de message
+    const messageTypeLabel = messageTypes.find(type => type.value === formData.messageType)?.label || formData.messageType;
 
-    console.log("Formulaire soumis:", formData);
+    // Construire le message WhatsApp avec les informations du formulaire
+    const message = `NOUVEAU MESSAGE DE CONTACT - DIALLO CHICKEN
+
+Type de demande : ${messageTypeLabel}
+Nom : ${formData.name}
+Email : ${formData.email}
+Téléphone : ${formData.phone}
+Objet : ${formData.subject}
+Message : ${formData.message}
+
+Date : ${new Date().toLocaleDateString('fr-FR')}
+Heure : ${new Date().toLocaleTimeString('fr-FR')}`;
+
+    // Ouvrir WhatsApp avec le message pré-rempli
+    const whatsappUrl = `https://wa.me/221777801319?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
     
     setIsSubmitting(false);
     setIsSubmitted(true);
@@ -436,18 +447,30 @@ export default function ContactPage() {
             {/* Map and Additional Info */}
             <div className="space-y-8">
               
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="h-80 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <Navigation className="w-16 h-16 mx-auto mb-4 opacity-80" />
-                    <h3 className="text-2xl font-bold mb-2">Notre Localisation</h3>
-                    <p className="text-green-100">Km 12, Route de yeumbeul, Dakar</p>
-                  </div>
+                <div className="h-80 relative">
+                  <iframe
+  src="https://www.google.com/maps?q=Yeumbeul,%20Dakar,%20Senegal&output=embed"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full h-full"
+  title="Localisation Diallo Chicken"
+></iframe>
                   
-                  {/* Map markers */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+                  {/* Overlay avec informations */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-red-500" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 text-sm">Diallo Chicken</h4>
+                        <p className="text-xs text-gray-600">Km 12, Route de yeumbeul, Dakar</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -480,7 +503,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">WhatsApp</div>
-                      <div className="text-sm text-gray-600">+221 77 977 32 17</div>
+                      <div className="text-sm text-gray-600">+221 77 701 35 98</div>
                     </div>
                   </a>
                 </div>
@@ -501,7 +524,6 @@ export default function ContactPage() {
                       <social.icon className="w-5 h-5" />
                       <div>
                         <div className="font-semibold">{social.name}</div>
-                        <div className="text-sm opacity-75">{social.followers} abonnés</div>
                       </div>
                     </a>
                   ))}

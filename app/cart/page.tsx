@@ -6,24 +6,6 @@ import { useCart } from "@/context/CartContext";
 import { Trash2, Plus, Minus, ShoppingCart, ShoppingBag, Phone } from "lucide-react";
 import CheckoutModal, { CheckoutFormData } from "@/components/CheckoutModal";
 
-const neighborhoods = [
-  { name: "Almadies", deliveryFee: 3000 },
-  { name: "Ngor", deliveryFee: 3000 },
-  { name: "Yoff", deliveryFee: 2500 },
-  { name: "Ouakam", deliveryFee: 2500 },
-  { name: "Mermoz", deliveryFee: 2000 },
-  { name: "Fann", deliveryFee: 2000 },
-  { name: "Point E", deliveryFee: 2000 },
-  { name: "Liberté 6", deliveryFee: 2000 },
-  { name: "Sacre Coeur", deliveryFee: 2000 },
-  { name: "Dakar Plateau", deliveryFee: 1500 },
-  { name: "Gueule Tapée", deliveryFee: 1500 },
-  { name: "Grand Dakar", deliveryFee: 2500 },
-  { name: "Dieuppeul", deliveryFee: 2000 },
-  { name: "Hann", deliveryFee: 3000 },
-  { name: "Parcelles Assainies", deliveryFee: 3500 },
-];
-
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -37,27 +19,37 @@ export default function CartPage() {
     0
   );
 
+  // Fonction pour calculer les frais de livraison selon le nombre de poulets
+  const calculateDeliveryFee = (neighborhood: string) => {
+    // Compter le nombre de poulets dans le panier
+    const pouletCount = cart.reduce((count: number, item: { name: string; quantity: number }) => {
+      if (item.name.toLowerCase().includes('poulet')) {
+        return count + item.quantity;
+      }
+      return count;
+    }, 0);
+
+    // Si plus de 5 poulets : 2000 FCFA partout à Dakar
+    if (pouletCount > 5) {
+      return 2000;
+    }
+    
+    // Si moins de 5 poulets : 3000 FCFA partout à Dakar
+    return 3000;
+  };
+
   const handleCheckout = (data: CheckoutFormData) => {
     const itemsText = cart.map(item => 
       `- ${item.name} (${item.quantity} x ${formatPrice(item.price)} FCFA)`
-    ).join('%0A');
+    ).join('\n');
 
-    const deliveryFee = data.neighborhood ? 
-      (neighborhoods.find(n => n.name === data.neighborhood)?.deliveryFee || 0) : 0;
+    // Utiliser la nouvelle logique de calcul des frais de livraison
+    const deliveryFee = data.neighborhood ? calculateDeliveryFee(data.neighborhood) : 0;
     const totalWithDelivery = total + deliveryFee;
 
-    const message = `Nouvelle commande de ${data.fullName}%0A%0A` +
-      `📦 *Articles commandés* :%0A${itemsText}%0A%0A` +
-      `💰 *Total* : ${formatPrice(total)} FCFA%0A` +
-      `🚚 *Frais de livraison* : ${formatPrice(deliveryFee)} FCFA%0A` +
-      `💵 *Total à payer* : ${formatPrice(totalWithDelivery)} FCFA%0A%0A` +
-      `📱 *Contact* : ${data.phone}%0A` +
-      `📧 *Email* : ${data.email || 'Non renseigné'}%0A` +
-      `🏠 *Adresse* : ${data.address}%0A` +
-      `📍 *Quartier* : ${data.neighborhood}%0A` +
-      `📝 *Notes* : ${data.deliveryNotes || 'Aucune note'}`;
+    const message = `NOUVELLE COMMANDE DE DIALLO CHICKEN\n\nClient: ${data.fullName}\nArticles commandes:\n${itemsText}\n\nSous-total: ${formatPrice(total)} FCFA\nFrais de livraison: ${formatPrice(deliveryFee)} FCFA\nTotal a payer: ${formatPrice(totalWithDelivery)} FCFA\n\nContact: ${data.phone}\nEmail: ${data.email}\nAdresse: ${data.address}\nQuartier: ${data.neighborhood}\nNotes: ${data.deliveryNotes || 'Aucune note'}`;
 
-    window.open(`https://wa.me/221763394521?text=${message}`, '_blank');
+    window.open(`https://wa.me/221777801319?text=${encodeURIComponent(message)}`, '_blank');
     setIsCheckoutOpen(false);
   };
 
@@ -82,7 +74,7 @@ export default function CartPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
-      <h1 className="text-3xl font-bold mb-8">Mon panier</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">Mon panier</h1>
 
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Liste produits */}
@@ -178,6 +170,7 @@ export default function CartPage() {
             onClose={() => setIsCheckoutOpen(false)}
             onCheckout={handleCheckout}
             total={total}
+            cart={cart}
           />
         </div>
       </div>

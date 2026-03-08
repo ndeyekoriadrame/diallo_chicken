@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Facebook, Instagram, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
-
+import { Facebook, Instagram, Phone, Mail, MessageCircle, MapPin} from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white mt-20 pt-12 pb-10">
@@ -39,7 +39,7 @@ export default function Footer() {
           <ul className="text-gray-300 space-y-3">
             <li className="flex items-center gap-2 justify-center md:justify-start">
               <Phone size={18} className="text-yellow-500" />
-              77 780 13 19
+              77 780 13 19, 77 701 35 98
             </li>
 
             <li className="flex items-center gap-2 justify-center md:justify-start">
@@ -69,6 +69,10 @@ export default function Footer() {
 
             <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-yellow-600 transition">
               <Instagram size={20} />
+            </a>
+           
+            <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-yellow-600 transition">
+              <FaTiktok size={20} />
             </a>
           </div>
         </div>

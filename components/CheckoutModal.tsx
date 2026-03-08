@@ -7,6 +7,7 @@ interface CheckoutModalProps {
   onClose: () => void;
   onCheckout: (data: CheckoutFormData) => void;
   total: number;
+  cart: any[];
 }
 
 export interface CheckoutFormData {
@@ -19,24 +20,34 @@ export interface CheckoutFormData {
 }
 
 const neighborhoods = [
-  { name: "Almadies", deliveryFee: 3000 },
-  { name: "Ngor", deliveryFee: 3000 },
-  { name: "Yoff", deliveryFee: 2500 },
-  { name: "Ouakam", deliveryFee: 2500 },
-  { name: "Mermoz", deliveryFee: 2000 },
-  { name: "Fann", deliveryFee: 2000 },
-  { name: "Point E", deliveryFee: 2000 },
-  { name: "Liberté 6", deliveryFee: 2000 },
-  { name: "Sacre Coeur", deliveryFee: 2000 },
-  { name: "Dakar Plateau", deliveryFee: 1500 },
-  { name: "Gueule Tapée", deliveryFee: 1500 },
-  { name: "Grand Dakar", deliveryFee: 2500 },
-  { name: "Dieuppeul", deliveryFee: 2000 },
-  { name: "Hann", deliveryFee: 3000 },
-  { name: "Parcelles Assainies", deliveryFee: 3500 },
+  { name: "Yeumbeul", deliveryFee: 1000 },
+  { name: "Keur Massar", deliveryFee: 1500 },
+  { name: "Autres quartiers de Dakar", deliveryFee: 3000 },
 ];
 
-export default function CheckoutModal({ isOpen, onClose, onCheckout, total }: CheckoutModalProps) {
+// Fonction pour calculer les frais de livraison selon le nombre de poulets
+const calculateDeliveryFee = (neighborhood: string, cartItems: any[]) => {
+  // Compter le nombre de poulets dans le panier
+  const pouletCount = cartItems.reduce((count: number, item: { name: string; quantity: number }) => {
+    if (item.name.toLowerCase().includes('poulet')) {
+      return count + item.quantity;
+    }
+    return count;
+  }, 0);
+
+  // Tarifs spéciaux pour Yeumbeul et Keur Massar
+  if (neighborhood === "Yeumbeul") return 1000;
+  if (neighborhood === "Keur Massar") return 1500;
+
+  // Pour "Autres quartiers de Dakar" et autres quartiers : appliquer la logique dynamique
+  if (pouletCount >= 5) {
+    return 2000; // 2000 FCFA si 5 poulets ou plus
+  }
+  
+  return 3000; // 3000 FCFA si moins de 5 poulets
+};
+
+export default function CheckoutModal({ isOpen, onClose, onCheckout, total, cart }: CheckoutModalProps) {
   const [formData, setFormData] = useState<CheckoutFormData>({
     fullName: "",
     phone: "",
@@ -64,7 +75,8 @@ export default function CheckoutModal({ isOpen, onClose, onCheckout, total }: Ch
     setSelectedNeighborhood(selected || null);
   };
 
-  const deliveryFee = selectedNeighborhood?.deliveryFee || 0;
+  // Utiliser la nouvelle logique de calcul des frais de livraison
+  const deliveryFee = selectedNeighborhood ? calculateDeliveryFee(selectedNeighborhood.name, cart) : 0;
   const totalWithDelivery = total + deliveryFee;
 
   return (
@@ -158,6 +170,13 @@ export default function CheckoutModal({ isOpen, onClose, onCheckout, total }: Ch
                   </option>
                 ))}
               </select>
+              
+              {/* Message informatif sur les tarifs */}
+              <div className="mt-2 p-3 bg-orange-50 border border-orange-200 rounded-lg">
+                <p className="text-sm text-orange-800">
+                  Profitez de la livraison à seulement 2000 FCFA partout dans les autres quartiers de Dakar dès 5 poulets achetés !
+                </p>
+              </div>
             </div>
 
             <div>

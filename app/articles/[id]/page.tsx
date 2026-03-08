@@ -42,7 +42,7 @@ export default function ArticlePage() {
     "4": {
       id: 4,
       image: "/article4.jpg",
-      category: "Agriculture locale",
+      category: "Aviculture locale",
       date: "08 Sep 2025",
       title: "Pourquoi privilégier la volaille locale ?",
       excerpt: "Fraîcheur garantie, circuit court, soutien aux éleveurs : voici les avantages de la volaille locale.",
@@ -157,7 +157,7 @@ export default function ArticlePage() {
               Voir nos produits
             </Link>
             <Link
-              href="/"
+              href="/articles"
               className="bg-white text-yellow-600 border-2 border-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-50 transition-colors"
             >
               Lire d'autres articles

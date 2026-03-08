@@ -116,7 +116,7 @@ export default function ServicesPage() {
     {
       step: "01",
       title: "Commande",
-      description: "Passez commande en ligne, par téléphone ou WhatsApp",
+      description: "Passez la commande en ligne, par téléphone ou WhatsApp",
       icon: ShoppingCart
     },
     {
@@ -215,7 +215,7 @@ export default function ServicesPage() {
 
   <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
     Découvrez notre gamme complète de services professionnels pour particuliers et entreprises. 
-    Qualité, rapidité et satisfaction garanties depuis plus de 10 ans.
+    Qualité, rapidité et satisfaction garanties depuis plus de 15 ans.
   </p>
 
   <div className="flex flex-col sm:flex-row gap-4 justify-center">

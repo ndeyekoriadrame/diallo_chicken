@@ -30,9 +30,22 @@ export default function Home() {
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Logique de soumission du formulaire
-    console.log('Formulaire soumis:', contactForm);
-    alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+    
+    // Construire le message WhatsApp avec les informations du formulaire
+    const message = `NOUVEAU MESSAGE DE CONTACT - DIALLO CHICKEN
+
+Nom : ${contactForm.name}
+Email : ${contactForm.email}
+Téléphone : ${contactForm.phone || 'Non renseigné'}
+Message : ${contactForm.message}
+
+Date : ${new Date().toLocaleDateString('fr-FR')}
+Heure : ${new Date().toLocaleTimeString('fr-FR')}`;
+
+    // Ouvrir WhatsApp avec le message pré-rempli
+    const whatsappUrl = `https://wa.me/221777801319?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
     // Reset du formulaire
     setContactForm({ name: '', email: '', phone: '', message: '' });
   };
@@ -148,7 +161,7 @@ export default function Home() {
                 </div>
 
                 <p>
-                  En choisissant Diallo Chicken, vous soutenez l'agriculture locale et
+                  En choisissant Diallo Chicken, vous soutenez l'aviculture locale et
                   participez au développement économique de nos communautés rurales.
                   Chaque commande contribue à préserver nos traditions d'élevage ancestral.
                 </p>
@@ -247,7 +260,7 @@ export default function Home() {
       </h3>
       <p className="text-gray-600 text-lg leading-relaxed">
         Une logistique optimisée pour livrer partout à Dakar
-        en un temps record — souvent en moins de 2 heures.
+        en un temps record, souvent en moins de 2 heures.
       </p>
     </div>
 
@@ -272,46 +285,52 @@ export default function Home() {
 </section>
 
 
-      {/* ---------------- PRODUITS PHARES ---------------- */}
-      <section className="bg-gray-100 py-10 px-6">
-        <h2
-          className="text-5xl font-bold text-center mb-12 text-primary-500 leading-tight"
-          style={{ fontFamily: "Dancing Script, cursive" }}
-        >
-          Nos produits phares
-        </h2>
+     {/* ---------------- PRODUITS PHARES ---------------- */}
+<section className="bg-gray-100 py-10 px-6">
+  <h2
+    className="text-5xl font-bold text-center mb-12 text-primary-500 leading-tight"
+    style={{ fontFamily: "Dancing Script, cursive" }}
+  >
+    Nos produits phares
+  </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white shadow rounded-xl p-6 text-center">
-            <img
-              src="/poulet.jpg"
-              alt="Poulets de chair"
-              className="w-full h-74 object-cover rounded-lg"
-            />
-            <h3 className="text-2xl font-semibold mt-4">Poulets de chair</h3>
-            <p className="text-gray-600 mt-2">Frais, propres et prêts pour toutes vos recettes.</p>
-          </div>
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
-          <div className="bg-white shadow rounded-xl p-6 text-center">
-            <img
-              src="/oeuf.jpg"
-              alt="Oeufs frais"
-              className="w-full h-74 object-cover rounded-lg"
-            />
-            <h3 className="text-2xl font-semibold mt-4">Œufs frais</h3>
-            <p className="text-gray-600 mt-2">Disponibles en gros (cartons) et en détail.</p>
-          </div>
-        </div>
+    <div className="bg-white shadow rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <img
+        src="/poulet.jpg"
+        alt="Poulets de chair"
+        className="w-full h-74 object-cover rounded-lg"
+      />
+      <h3 className="text-2xl font-semibold mt-4">Poulets de chair</h3>
+      <p className="text-gray-600 mt-2">
+        Frais, propres et prêts pour toutes vos recettes.
+      </p>
+    </div>
 
-        <div className="text-center mt-12">
-          <a
-            href="/products"
-            className="bg-yellow-600 text-white px-8 py-4 rounded-lg text-lg shadow hover:bg-yellow-700 transition"
-          >
-            Explorer tous les produits
-          </a>
-        </div>
-      </section>
+    <div className="bg-white shadow rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <img
+        src="/oeuf.jpg"
+        alt="Oeufs frais"
+        className="w-full h-74 object-cover rounded-lg"
+      />
+      <h3 className="text-2xl font-semibold mt-4">Œufs frais</h3>
+      <p className="text-gray-600 mt-2">
+        Disponibles en gros (cartons) et en détail.
+      </p>
+    </div>
+
+  </div>
+
+  <div className="text-center mt-12">
+    <a
+      href="/products"
+      className="bg-yellow-600 text-white px-8 py-4 rounded-lg text-lg shadow hover:bg-yellow-700 hover:scale-105 transform transition duration-300"
+    >
+      Explorer tous les produits
+    </a>
+  </div>
+</section>
 
       {/* ---------------- HERO CAROUSEL ---------------- */}
       <section className="relative w-full h-[80vh] overflow-hidden lg:mt-12">
@@ -649,7 +668,7 @@ export default function Home() {
               {
                 id: 4,
                 image: "/article4.jpg",
-                category: "Agriculture locale",
+                category: "Aviculture locale",
                 date: "08 Sep 2025",
                 title: "Pourquoi privilégier la volaille locale ?",
                 excerpt: "Fraîcheur garantie, circuit court, soutien aux éleveurs : voici les avantages de la volaille locale.",

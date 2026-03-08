@@ -87,75 +87,46 @@ export default function DeliveryPage() {
   </div>
 </section>
 
-      {/* Suivi de Commande Bloc */}
-      <div className="bg-gradient-to-r from-gray-50 to-gray-100 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Suivi de votre Livraison
-            </h2>
-            
-            {/* Commande cliquable */}
-            <button
-              onClick={() => setIsTrackingExpanded(!isTrackingExpanded)}
-              className="inline-flex items-center space-x-3 bg-white border-2 border-yellow-600 hover:border-yellow-700 rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <CheckCircle className="w-6 h-6 text-yellow-700" />
-              <span className="text-lg font-semibold text-gray-800">Commande #DC-2025-001</span>
-              {isTrackingExpanded ? (
-                <ChevronUp className="w-5 h-5 text-gray-600" />
-              ) : (
-                <ChevronDown className="w-5 h-5 text-gray-600" />
-              )}
-            </button>
-          </div>
+      {/* Livraison Informations */}
+<div className="bg-gradient-to-r from-gray-50 to-gray-100 py-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-          {/* Contenu expandable */}
-          <div className="max-w-4xl mx-auto">
-            <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
-              isTrackingExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-            }`}>
-              <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-                <div className="flex items-center justify-between mb-8">
-                  <div>
-                    <span className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium">
-                      En cours de préparation
-                    </span>
-                  </div>
-                </div>
+    <h2 className="text-4xl font-bold text-gray-900 mb-10">
+      Comment fonctionne la livraison
+    </h2>
 
-                <div className="relative">
-                  {trackingSteps.map((step, index) => (
-                    <div key={step.id} className="flex items-center mb-6 last:mb-0">
-                      <div className="flex-shrink-0">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                          step.completed
-                            ? 'bg-yellow-600 text-white'
-                            : 'bg-gray-200 text-gray-400'
-                        }`}>
-                          <CheckCircle className="w-6 h-6" />
-                        </div>
-                      </div>
-                      <div className="ml-6 flex-grow">
-                        <h4 className={`text-lg font-medium ${
-                          step.completed ? 'text-yellow-700' : 'text-gray-500'
-                        }`}>
-                          {step.name}
-                        </h4>
-                        <p className={`text-sm ${
-                          step.completed ? 'text-yellow-600' : 'text-gray-400'
-                        }`}>
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* Étape 1 */}
+      <div className="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <Phone className="w-10 h-10 text-yellow-600 mx-auto mb-4 transition duration-300 hover:text-yellow-700" />
+        <h3 className="text-xl font-semibold mb-2">Passez votre commande</h3>
+        <p className="text-gray-600">
+          Contactez-nous par téléphone ou WhatsApp pour commander vos poulets et œufs.
+        </p>
       </div>
+
+      {/* Étape 2 */}
+      <div className="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <Clock className="w-10 h-10 text-yellow-600 mx-auto mb-4 transition duration-300 hover:text-yellow-700" />
+        <h3 className="text-xl font-semibold mb-2">Préparation rapide</h3>
+        <p className="text-gray-600">
+          Nous préparons votre commande avec des produits frais directement de la ferme.
+        </p>
+      </div>
+
+      {/* Étape 3 */}
+      <div className="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <Truck className="w-10 h-10 text-yellow-600 mx-auto mb-4 transition duration-300 hover:text-yellow-700" />
+        <h3 className="text-xl font-semibold mb-2">Livraison à domicile</h3>
+        <p className="text-gray-600">
+          Votre commande est livrée rapidement dans Dakar et ses environs.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
 
       {/* CTA Section */}
 <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 text-black py-16">

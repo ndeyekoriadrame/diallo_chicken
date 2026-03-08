@@ -56,37 +56,16 @@ const products: Product[] = [
     id: 4,
     name: "Carton d'œufs (30 unités)",
     category: "oeuf",
-    price: 3500,
-    weight: "1.8 kg",
+    price: 2500,
+    weight: "52g/pièce",
     image: "/oeuf.jpg",
-    description: "Carton de 30 œufs frais, parfait pour les familles ou restaurants.",
+    description: "Carton de 30 œufs frais en gros, parfait pour les familles ou restaurants.",
     inStock: true,
     tags: ["carton", "économique", "famille"]
   },
+ 
   {
     id: 5,
-    name: "Demi-poulet coupé",
-    category: "poulet",
-    price: 4500,
-    weight: "600-700g",
-    image: "/demipoulet.jpg",
-    description: "Demi-poulet découpé, prêt pour la cuisson. Idéal pour 2-3 personnes.",
-    inStock: true,
-    tags: ["portion", "coupé", "pratique"]
-  },
-  {
-    id: 6,
-    name: "Œufs extra-frais",
-    category: "oeuf",
-    price: 150,
-    weight: "55g/pièce",
-    image: "/oeuf1.jpg",
-    description: "Œufs extra-frais pondus dans les 24h, qualité exceptionnelle.",
-    inStock: true,
-    tags: ["extra-frais", "qualité"]
-  },
-  {
-    id: 7,
     name: "Poulet royal",
     category: "poulet",
     price: 4000,
@@ -97,13 +76,13 @@ const products: Product[] = [
     tags: ["royal", "race-sélectionnée", "rare"]
   },
   {
-    id: 8,
-    name: "Œufs",
+    id: 6,
+    name: "Carton d'œufs (30 unités)",
     category: "oeuf",
-    price: 180,
+    price: 2800,
     weight: "52g/pièce",
     image: "/coeuf.jpg",
-    description: "Œufs frais de consommation, goût unique et texture exceptionnelle.",
+    description: "Œufs frais de consommation en detail, goût unique et texture exceptionnelle.",
     inStock: true,
     tags: ["gout-unique", "spécial"]
   }
@@ -217,7 +196,7 @@ export default function ProductsPage() {
             Nos Produits
           </h1>
           <p className="text-xl md:text-2xl font-bold text-yellow-100 max-w-3xl mx-auto leading-relaxed animate-slideUp">
-            Découvrez notre gamme complète de produits frais : poulets fermiers et œufs bio de qualité exceptionnelle.
+            Savourez nos poulets de chair frais et nos œufs de qualité, issus d’un élevage local respectueux du bien-être animal.
           </p>
         </div>
       </section>
